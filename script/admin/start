@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+WWW_ROOT="./admin-website"
+LISTEN_HOST="127.0.0.1"
+LISTEN_PORT=8011
+
+if ! command -v pnpm >/dev/null 2>&1; then
+  printf "\n=======================\nERROR: Admin Server not started\npnpm is required.\n\n1) Install Node LTS from https://nodejs.org/\n2) Run: corepack enable pnpm\n3) Re-run this script.\n=======================\n" >&2
+  exit 1
+fi
+
+cd "$WWW_ROOT" || exit 1
+echo "Serving Admin Website on http://$LISTEN_HOST:$LISTEN_PORT (^C to stop)."
+pnpm install || exit 1
+pnpm dev
