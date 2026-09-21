@@ -21,5 +21,5 @@ if errorlevel 1 (
 
 cd /d "%WWW_ROOT%" || exit /b 1
 echo Serving Admin Website on http://%LISTEN_HOST%:%LISTEN_PORT% (^C to stop^).
-pnpm install || exit /b 1
-pnpm dev
+call pnpm install || exit /b 1
+call pnpm dev
