@@ -16,6 +16,28 @@ corepack enable pnpm
 
 Otherwise install the Node LTS from https://nodejs.org/ first.
 
+## pnpm installs packages but the website does not start on Windows
+
+On Windows, `pnpm` normally runs through `pnpm.cmd`. A batch script must use `call pnpm install` to continue to its next command.
+Without `call`, installation can finish without starting the website.
+
+If this happens, start the websites directly. Open two Command Prompt windows in the repository root.
+In the first window, run:
+
+```bat
+cd customer-website
+pnpm install && pnpm dev
+```
+
+In the second window, run:
+
+```bat
+cd admin-website
+pnpm install && pnpm dev
+```
+
+Keep the API server running in a third window.
+
 ## `python3 command not recognized` on Windows
 
 In some versions of Windows Python 3 doesn't get installed with a `python3` executable. To resolve quickly you can just follow the advice in [this Stackoverflow question](https://stackoverflow.com/a/60597491/323999).

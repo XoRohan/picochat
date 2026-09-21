@@ -34,13 +34,26 @@ The customer and admin websites are React + TypeScript apps and need Node.js wit
 
 ## Getting started
 
-Run the following in 3 different terminal windows:
+Open three terminals in the repository root. Run one command in each terminal.
 
-```
+On macOS, Linux, or Windows with WSL:
+
+```sh
 script/customer/start
 script/admin/start
 script/{your-framework}/start
 ```
+
+In Windows Command Prompt, use the batch scripts:
+
+```bat
+script\customer\start.bat
+script\admin\start.bat
+script\{your-framework}\start.bat
+```
+
+Replace `{your-framework}` with `go`, `node`, or `python`.
+If a Windows website script stops after installing packages, use the [pnpm workaround](TROUBLESHOOTING.md#pnpm-installs-packages-but-the-website-does-not-start-on-windows).
 
 This will give you the following:
 
